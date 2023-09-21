@@ -1,4 +1,5 @@
-# apache_ftp
+# apache_ftp 
+## Compilação do apache direto do mirror para aquisição de versões mais atualizadas, sem ser a versão estável do pacote do Linux + configuração de servidor vsftpd
 
 1 Baixar e Extrair o Source Apache
 apt-get update
@@ -63,10 +64,10 @@ echo "sammy" | sudo tee -a /etc/vsftpd.userlist
 14 Gerar chave fstpd 
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/vsftpd.pem -out /etc/ssl/private/vsftpd.pem
 
-rsa_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem (deixar comentado)
-rsa_private_key_file=/etc/ssl/private/ssl-cert-snakeoil.key (deixar comentado)
-rsa_cert_file=/etc/ssl/private/vsftpd.pem
-rsa_private_key_file=/etc/ssl/private/vsftpd.pem
+**rsa_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem (deixar comentado no arquivo de configuiração)**
+**rsa_private_key_file=/etc/ssl/private/ssl-cert-snakeoil.key (deixar comentado no arquivo dw configuração)**
+**rsa_cert_file=/etc/ssl/private/vsftpd.pem (adicionar ao arquivo de configuração)**
+**rsa_private_key_file=/etc/ssl/private/vsftpd.pem (adicionar ao arquivo de configuração)**
 
 ssl_enable=YES (ALTERAR)
 allow_anon_ssl=NO
